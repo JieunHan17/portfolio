@@ -1,6 +1,7 @@
 import React from 'react';
 import ProjectCard from './ProjectCard';
 import AdmanagerDetail from './AdmanagerDetail';
+import AdSDKDetail from './AdSDKDetail';
 
 const Projects: React.FC = () => {
   const otherProjects = [
@@ -16,12 +17,6 @@ const Projects: React.FC = () => {
       tech: ['Node.js', 'REST API'], 
       link: '#' 
     },
-    { 
-      title: 'Ad SDK Integration', 
-      description: 'webOS TV 광고 생태계 확장을 위한 신규 SDK 요구사항 분석 및 연동 이슈 대응', 
-      tech: ['C++', 'Javascript'], 
-      link: '#' 
-    },
   ];
 
   return (
@@ -29,8 +24,9 @@ const Projects: React.FC = () => {
       <div className="container">
         <h2 style={{ textAlign: 'center', marginBottom: 'var(--spacing-xl)' }}>Featured Projects</h2>
         
-        {/* Major Project Detail */}
+        {/* Major Project Details */}
         <AdmanagerDetail />
+        <AdSDKDetail />
 
         <h3 style={{ marginBottom: 'var(--spacing-lg)' }}>Other Contributions</h3>
         <div style={{ 
