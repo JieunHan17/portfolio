@@ -9,7 +9,7 @@ const AdmanagerDetail: React.FC = () => {
         'CAdProcessCMPNative 클래스 설계 (싱글톤 패턴)',
         'TCF(Transparency & Consent Framework) 문자열 저장/조회 및 만료 계산',
         '시스템 서비스 연동을 통한 조건부 앱 실행/종료 로직 구현',
-        '256개 라인의 유닛 테스트 작성'
+        '주요 기능에 대한 유닛 테스트 작성'
       ]
     },
     {
@@ -19,7 +19,7 @@ const AdmanagerDetail: React.FC = () => {
         'CAdParentalControl 클래스 설계 및 구현',
         '국가별 연령 등급 시스템 및 다국어 팝업 로직 적용',
         '파일 기반 상태 영속화 및 실시간 설정 반영',
-        '379개 라인의 유닛 테스트로 시나리오 커버'
+        '다양한 엣지 케이스를 포함한 유닛 테스트 커버리지 확보'
       ]
     },
     {
@@ -75,7 +75,7 @@ const AdmanagerDetail: React.FC = () => {
         </div>
         <div>
           <small style={{ color: 'var(--text-secondary)', fontWeight: 'bold', fontFamily: 'var(--font-mono)' }}>[contribution]</small>
-          <p style={{ fontSize: '0.95rem', fontWeight: '500', marginTop: '4px' }}>48 commits (13%), +7,092 lines</p>
+          <p style={{ fontSize: '0.95rem', fontWeight: '500', marginTop: '4px' }}>Core Logic & Feature Implementation</p>
         </div>
         <div>
           <small style={{ color: 'var(--text-secondary)', fontWeight: 'bold', fontFamily: 'var(--font-mono)' }}>[key_scope]</small>
