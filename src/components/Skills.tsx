@@ -8,20 +8,24 @@ const Skills: React.FC = () => {
     },
     {
       title: 'Languages & System',
-      skills: ['C++', 'REST API']
+      skills: ['C++', 'GLib', 'libcurl', 'GTest', 'Luna Service', 'REST API', 'Design Patterns']
+    },
+    {
+      title: 'Ad Tech',
+      skills: ['VAST Standard', 'CTV Ads', 'Impression Tracking', 'Ad Slot Management', 'IAB Standards']
     },
     {
       title: 'Tools & DevOps',
-      skills: ['Git', 'Jenkins', 'Jira', 'Copilot', 'Markdown']
+      skills: ['Git', 'Jenkins', 'Jira', 'GitHub Actions', 'Vite', 'Copilot']
     },
     {
       title: 'Design & UX',
-      skills: ['UI/UX', 'Figma']
+      skills: ['UI/UX', 'Figma', 'Markdown']
     }
   ];
 
   const industryKnowledge = [
-    '광고·마케팅', '방송·엔터테인먼트', '전자제품', '콘텐츠', '라이프스타일'
+    'Ad Tech', 'Privacy Compliance', 'Smart TV / CTV', 'Embedded System', 'Web Development'
   ];
 
   return (
