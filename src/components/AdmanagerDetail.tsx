@@ -43,7 +43,7 @@ const AdmanagerDetail: React.FC = () => {
   ];
 
   return (
-    <div style={{ 
+    <div id="project-admanager" style={{ 
       background: 'var(--bg-primary)', 
       borderRadius: '16px', 
       padding: 'var(--spacing-lg)', 

@@ -8,9 +8,9 @@ const Experience: React.FC = () => {
       period: '2022.07 ~ 재직 중',
       details: [
         '광고 운영 Admin 페이지 프론트엔드 구현',
-        '광고 SDK 신규 요구사항 및 이슈 대응',
+        <span key="adsdk"><a href="#project-adsdk" style={{ color: 'var(--accent-color)', textDecoration: 'none', fontWeight: '600' }}>Ad-SDK Core Development</a> 신규 요구사항 및 이슈 대응 <small style={{ fontSize: '0.75rem', opacity: 0.7 }}>[detail]</small></span>,
         'Shopping Overlay 웹앱 구현',
-        '광고플랫폼 Admanager 신규 요구사항 및 이슈 대응',
+        <span key="admanager"><a href="#project-admanager" style={{ color: 'var(--accent-color)', textDecoration: 'none', fontWeight: '600' }}>admanager (webOS TV Ad System)</a> 신규 요구사항 및 이슈 대응 <small style={{ fontSize: '0.75rem', opacity: 0.7 }}>[detail]</small></span>,
         'LG채널 웹버전 백엔드 API 구현'
       ]
     },
