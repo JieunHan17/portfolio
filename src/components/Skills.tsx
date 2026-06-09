@@ -1,102 +1,46 @@
 import React from 'react';
 
 const Skills: React.FC = () => {
-  const skillCategories = [
+  const skillGroups = [
     {
-      title: 'Frontend',
-      skills: ['React', 'Javascript', 'Vanilla JS', 'Svelte', 'Vue.js', 'HTML5', 'CSS', 'react-dom', 'React Router', 'React Native', 'Vite']
+      category: 'Languages',
+      skills: ['C++', 'JavaScript', 'TypeScript', 'Kotlin', 'SQL']
     },
     {
-      title: 'Languages & System',
-      skills: ['C++', 'GLib', 'libcurl', 'GTest', 'Luna Service', 'REST API', 'Design Patterns']
+      category: 'Frontend',
+      skills: ['React 19', 'Redux Toolkit', 'ECharts', '@tanstack/react-virtual', 'MUI', 'Emotion', 'Vite']
     },
     {
-      title: 'Ad Tech',
-      skills: ['VAST Standard', 'CTV Ads', 'Impression Tracking', 'Ad Slot Management', 'IAB Standards']
+      category: 'Backend',
+      skills: ['Spring Boot 3.4', 'JPA', 'MySQL', 'Redis', 'Spring Security', 'JWT', 'Flyway']
     },
     {
-      title: 'Tools & DevOps',
-      skills: ['Git', 'Jenkins', 'Jira', 'GitHub Actions', 'Vite', 'Copilot']
-    },
-    {
-      title: 'Design & UX',
-      skills: ['UI/UX', 'Figma', 'Markdown']
+      category: 'Tools & Others',
+      skills: ['Git', 'Docker', 'Luna Service', 'GLib', 'VAST Standard', 'REST API']
     }
   ];
 
-  const industryKnowledge = [
-    'Ad Tech', 'Privacy Compliance', 'Smart TV / CTV', 'Embedded System', 'Web Development'
-  ];
-
   return (
-    <section id="skills" style={{ background: 'var(--bg-primary)' }}>
+    <section id="skills" style={{ background: 'var(--bg-secondary)' }}>
       <div className="container">
-        <h2 style={{ textAlign: 'center', marginBottom: 'var(--spacing-xl)', fontFamily: 'var(--font-mono)', fontSize: '2rem' }}>
-          <span style={{ color: 'var(--term-green)' }}>$</span> ls -R ~/skills
-        </h2>
-        
+        <h2 style={{ marginBottom: 'var(--spacing-xl)' }}>Skills</h2>
         <div style={{ 
           display: 'grid', 
-          gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', 
-          gap: 'var(--spacing-lg)',
-          marginBottom: 'var(--spacing-xl)'
+          gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))', 
+          gap: 'var(--spacing-lg)' 
         }}>
-          {skillCategories.map((category) => (
-            <div key={category.title} style={{
-              background: 'var(--bg-secondary)',
-              padding: 'var(--spacing-lg)',
-              borderRadius: '12px',
-              border: '1px solid var(--border-color)',
-              fontFamily: 'var(--font-mono)'
-            }}>
-              <h3 style={{ 
-                fontSize: '1.1rem', 
-                marginBottom: 'var(--spacing-md)', 
-                color: 'var(--accent-color)'
-              }}>
-                ./{category.title.toLowerCase().replace(/ /g, '_')}
+          {skillGroups.map((group, index) => (
+            <div key={index} className="repo-card reveal" style={{ padding: 'var(--spacing-md)' }}>
+              <h3 style={{ fontSize: '1.1rem', marginBottom: 'var(--spacing-md)', color: 'var(--accent-color)' }}>
+                {group.category}
               </h3>
               <div style={{ display: 'flex', flexWrap: 'wrap', gap: '8px' }}>
-                {category.skills.map(skill => (
-                  <span key={skill} style={{ 
-                    padding: '4px 8px', 
-                    background: 'var(--bg-primary)', 
-                    borderRadius: '4px',
-                    fontSize: '0.85rem',
-                    color: 'var(--text-primary)',
-                    border: '1px solid var(--border-color)'
-                  }}>
-                    {skill}
-                  </span>
+                {group.skills.map((skill, i) => (
+                  <span key={i} className="badge badge-accent">{skill}</span>
                 ))}
               </div>
             </div>
           ))}
-        </div>
-
-        <div style={{ textAlign: 'center', fontFamily: 'var(--font-mono)' }}>
-          <h2 style={{ marginBottom: 'var(--spacing-lg)', fontSize: '1.8rem' }}>
-            <span style={{ color: 'var(--term-green)' }}>$</span> check --domains
-          </h2>
-          <div style={{ 
-            display: 'flex', 
-            flexWrap: 'wrap', 
-            gap: 'var(--spacing-md)', 
-            justifyContent: 'center' 
-          }}>
-            {industryKnowledge.map(industry => (
-              <span key={industry} style={{ 
-                padding: '0.6rem 1.2rem', 
-                background: 'var(--accent-color)', 
-                color: 'white',
-                borderRadius: '6px',
-                fontWeight: '600',
-                fontSize: '1rem'
-              }}>
-                {industry}
-              </span>
-            ))}
-          </div>
         </div>
       </div>
     </section>

@@ -9,36 +9,18 @@ interface ProjectCardProps {
 
 const ProjectCard: React.FC<ProjectCardProps> = ({ title, description, tech, link }) => {
   return (
-    <div style={{ 
-      background: 'var(--card-bg)', 
-      padding: 'var(--spacing-md)', 
-      borderRadius: '12px',
-      border: '1px solid var(--border-color)',
-      boxShadow: '0 4px 12px rgba(0,0,0,0.05)',
-      transition: 'transform 0.2s ease, box-shadow 0.2s ease'
-    }}>
-      <h3 style={{ color: 'var(--text-primary)' }}>{title}</h3>
-      <p style={{ color: 'var(--text-secondary)' }}>{description}</p>
-      <div style={{ display: 'flex', flexWrap: 'wrap', gap: 'var(--spacing-sm)', marginBottom: 'var(--spacing-md)' }}>
-        {tech.map(t => (
-          <small key={t} style={{ 
-            color: 'var(--accent-color)',
-            background: 'var(--bg-secondary)',
-            padding: '2px 8px',
-            borderRadius: '4px',
-            fontWeight: '600'
-          }}>
-            #{t}
-          </small>
+    <div className="repo-card" style={{ height: '100%', display: 'flex', flexDirection: 'column' }}>
+      <h3 style={{ fontSize: '1.1rem', marginBottom: 'var(--spacing-sm)' }}>
+        <a href={link} style={{ color: 'var(--accent-color)', fontWeight: 600 }}>{title}</a>
+      </h3>
+      <p style={{ fontSize: '0.9rem', color: 'var(--text-secondary)', flexGrow: 1, marginBottom: 'var(--spacing-md)' }}>
+        {description}
+      </p>
+      <div style={{ display: 'flex', flexWrap: 'wrap', gap: '6px' }}>
+        {tech.map((t, i) => (
+          <span key={i} className="badge">{t}</span>
         ))}
       </div>
-      <a href={link} target="_blank" rel="noopener noreferrer" style={{ 
-        color: 'var(--accent-color)', 
-        fontWeight: 'bold',
-        display: 'inline-block'
-      }}>
-        View Details →
-      </a>
     </div>
   );
 };

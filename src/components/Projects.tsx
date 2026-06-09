@@ -1,5 +1,6 @@
 import React from 'react';
 import ProjectCard from './ProjectCard';
+import AdminDetail from './AdminDetail';
 import AdmanagerDetail from './AdmanagerDetail';
 import AdSDKDetail from './AdSDKDetail';
 
@@ -20,22 +21,27 @@ const Projects: React.FC = () => {
   ];
 
   return (
-    <section id="projects" style={{ background: 'var(--bg-secondary)' }}>
+    <section id="projects">
       <div className="container">
-        <h2 style={{ textAlign: 'center', marginBottom: 'var(--spacing-xl)' }}>Featured Projects</h2>
-        
-        {/* Major Project Details */}
-        <AdmanagerDetail />
-        <AdSDKDetail />
+        <h2 style={{ marginBottom: 'var(--spacing-xl)' }}>Featured Projects</h2>
 
-        <h3 style={{ marginBottom: 'var(--spacing-lg)' }}>Other Contributions</h3>
+        {/* Major Project Details */}
+        <div style={{ display: 'flex', flexDirection: 'column', gap: 'var(--spacing-lg)', marginBottom: 'var(--spacing-xl)' }}>
+          <div className="reveal"><AdminDetail /></div>
+          <div className="reveal"><AdmanagerDetail /></div>
+          <div className="reveal"><AdSDKDetail /></div>
+        </div>
+
+        <h3 style={{ marginBottom: 'var(--spacing-md)', fontSize: '1.25rem' }}>Other Contributions</h3>
         <div style={{ 
           display: 'grid', 
           gridTemplateColumns: 'repeat(auto-fill, minmax(300px, 1fr))', 
-          gap: 'var(--spacing-lg)' 
+          gap: 'var(--spacing-md)' 
         }}>
           {otherProjects.map((project, index) => (
-            <ProjectCard key={index} {...project} />
+            <div key={index} className="reveal">
+              <ProjectCard {...project} />
+            </div>
           ))}
         </div>
       </div>

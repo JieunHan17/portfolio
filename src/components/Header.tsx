@@ -20,14 +20,13 @@ const Header: React.FC<HeaderProps> = ({ theme, toggleTheme }) => {
         justifyContent: 'space-between', 
         alignItems: 'center', 
         height: 'var(--nav-height)',
-        padding: 0 /* Use container padding or header padding */
+        padding: 0
       }}>
         <div style={{ 
           fontWeight: '700', 
           fontSize: '1.2rem', 
           fontFamily: 'var(--font-mono)',
-          color: 'var(--accent-color)',
-          whiteSpace: 'nowrap'
+          color: 'var(--accent-color)'
         }}>
           ~/jieun_han
         </div>
@@ -35,50 +34,53 @@ const Header: React.FC<HeaderProps> = ({ theme, toggleTheme }) => {
         <nav style={{ 
           display: 'flex', 
           alignItems: 'center', 
-          gap: 'var(--spacing-lg)' 
+          gap: 'var(--spacing-md)' 
         }}>
           <ul style={{ 
             display: 'flex', 
-            gap: 'var(--spacing-lg)', /* Increased gap */
-            fontWeight: '600',
-            fontFamily: 'var(--font-mono)',
-            fontSize: '0.95rem',
+            gap: 'var(--spacing-md)',
+            fontWeight: '500',
+            fontSize: '0.9rem',
             margin: 0,
-            padding: 0
+            padding: 0,
+            listStyle: 'none'
           }}>
-            <li>
-              <a href="#about" style={{ color: 'var(--text-primary)', padding: '8px 4px' }}>ABOUT</a>
+            <li style={{ padding: 0, margin: 0 }} className="nav-item">
+              <a href="#about" style={{ color: 'var(--text-primary)', padding: '8px' }}>About</a>
             </li>
-            <li>
-              <a href="#experience" style={{ color: 'var(--text-primary)', padding: '8px 4px' }}>EXP</a>
+            <li style={{ padding: 0, margin: 0 }} className="nav-item">
+              <a href="#experience" style={{ color: 'var(--text-primary)', padding: '8px' }}>Experience</a>
             </li>
-            <li>
-              <a href="#skills" style={{ color: 'var(--text-primary)', padding: '8px 4px' }}>SKILLS</a>
+            <li style={{ padding: 0, margin: 0 }} className="nav-item">
+              <a href="#skills" style={{ color: 'var(--text-primary)', padding: '8px' }}>Skills</a>
             </li>
-            <li>
-              <a href="#projects" style={{ color: 'var(--text-primary)', padding: '8px 4px' }}>WORK</a>
+            <li style={{ padding: 0, margin: 0 }} className="nav-item">
+              <a href="#projects" style={{ color: 'var(--text-primary)', padding: '8px' }}>Projects</a>
             </li>
           </ul>
           
           <button 
             onClick={toggleTheme}
             style={{
-              background: 'var(--text-primary)',
-              color: 'var(--bg-primary)',
-              border: 'none',
-              padding: '8px 16px',
+              background: 'transparent',
+              color: 'var(--text-primary)',
+              border: '1px solid var(--border-color)',
+              padding: '6px 12px',
               borderRadius: '6px',
               cursor: 'pointer',
               fontSize: '0.85rem',
-              fontWeight: '700',
-              fontFamily: 'var(--font-mono)',
-              whiteSpace: 'nowrap'
+              fontWeight: '600',
+              marginLeft: 'var(--spacing-sm)'
             }}
           >
-            {theme === 'light' ? 'DARK' : 'LIGHT'}
+            {theme === 'light' ? 'Dark' : 'Light'}
           </button>
         </nav>
       </div>
+      <style>{`
+        .nav-item::before { content: none !important; }
+        .nav-item a:hover { color: var(--accent-color) !important; text-decoration: none !important; }
+      `}</style>
     </header>
   );
 };

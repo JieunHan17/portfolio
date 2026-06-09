@@ -42,63 +42,55 @@ const AdSDKDetail: React.FC = () => {
   ];
 
   return (
-    <div id="project-adsdk" style={{ 
-      background: 'var(--bg-primary)', 
-      borderRadius: '16px', 
-      padding: 'var(--spacing-lg)', 
-      border: '1px solid var(--border-color)',
-      marginBottom: 'var(--spacing-xl)',
-      boxShadow: '0 4px 20px rgba(0,0,0,0.03)'
-    }}>
-      <div style={{ borderBottom: '2px solid var(--bg-secondary)', paddingBottom: 'var(--spacing-md)', marginBottom: 'var(--spacing-lg)' }}>
-        <h2 style={{ color: 'var(--accent-color)', margin: 0, fontSize: '1.8rem', fontFamily: 'var(--font-mono)' }}>
+    <div id="project-adsdk" className="repo-card" style={{ padding: 'var(--spacing-lg)' }}>
+      <div style={{ display: 'flex', gap: '8px', marginBottom: '12px' }}>
+        <span className="badge badge-accent">200M+ Global Active Users</span>
+        <span className="badge">260M+ webOS Devices</span>
+        <span className="badge">Ad-Tech Standard</span>
+      </div>
+      <div style={{ marginBottom: 'var(--spacing-lg)' }}>
+        <h3 style={{ color: 'var(--accent-color)', fontSize: '1.5rem', marginBottom: '8px' }}>
           Ad-SDK Core Development (Smart TV Ad System)
-        </h2>
-        <p style={{ fontWeight: '700', color: 'var(--text-primary)', marginTop: '8px', fontSize: '1.1rem' }}>
+        </h3>
+        <p style={{ fontWeight: '600', color: 'var(--text-primary)', fontSize: '1.1rem', marginBottom: '8px' }}>
           SDK Developer | 2024.08 — 2025.03
         </p>
       </div>
 
       <div style={{ 
         display: 'grid', 
-        gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))', 
+        gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', 
         gap: 'var(--spacing-md)', 
-        marginBottom: 'var(--spacing-lg)', 
-        background: 'var(--bg-secondary)', 
-        padding: 'var(--spacing-md)', 
-        borderRadius: '12px'
+        marginBottom: 'var(--spacing-lg)',
+        padding: 'var(--spacing-md)',
+        background: 'var(--bg-secondary)',
+        borderRadius: '6px'
       }}>
         <div>
-          <small style={{ color: 'var(--text-secondary)', fontWeight: 'bold', fontFamily: 'var(--font-mono)' }}>[tech_stack]</small>
-          <p style={{ fontSize: '0.95rem', fontWeight: '500', marginTop: '4px' }}>C++, JavaScript, VAST Standard, Git</p>
+          <div className="terminal-prompt" style={{ fontSize: '0.8rem', opacity: 0.7 }}>tech_stack</div>
+          <p style={{ fontSize: '0.9rem', fontWeight: '500' }}>C++, JavaScript, VAST Standard</p>
         </div>
         <div>
-          <small style={{ color: 'var(--text-secondary)', fontWeight: 'bold', fontFamily: 'var(--font-mono)' }}>[contribution]</small>
-          <p style={{ fontSize: '0.95rem', fontWeight: '500', marginTop: '4px' }}>Core Feature Dev & Bug Fixing</p>
+          <div className="terminal-prompt" style={{ fontSize: '0.8rem', opacity: 0.7 }}>contribution</div>
+          <p style={{ fontSize: '0.9rem', fontWeight: '500' }}>Core Feature Dev & Bug Fixing</p>
         </div>
         <div>
-          <small style={{ color: 'var(--text-secondary)', fontWeight: 'bold', fontFamily: 'var(--font-mono)' }}>[key_scope]</small>
-          <p style={{ fontSize: '0.95rem', fontWeight: '500', marginTop: '4px' }}>Ad Tech, VAST, CTV, Test Infra</p>
+          <div className="terminal-prompt" style={{ fontSize: '0.8rem', opacity: 0.7 }}>key_scope</div>
+          <p style={{ fontSize: '0.9rem', fontWeight: '500' }}>Ad Tech, VAST, CTV</p>
         </div>
       </div>
 
       <div>
-        <h3 style={{ marginBottom: 'var(--spacing-lg)', fontSize: '1.4rem', fontFamily: 'var(--font-mono)' }}>
-          <span style={{ color: 'var(--term-green)' }}>$</span> cat sdk_contributions.log
-        </h3>
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))', gap: 'var(--spacing-lg)' }}>
+        <h4 style={{ fontSize: '1.2rem', marginBottom: 'var(--spacing-md)', borderBottom: '1px solid var(--border-color)', paddingBottom: '8px' }}>
+          Key Contributions
+        </h4>
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: 'var(--spacing-lg)' }}>
           {contributions.map((item, idx) => (
-            <div key={idx} style={{ 
-              padding: 'var(--spacing-md)', 
-              background: 'var(--bg-secondary)', 
-              borderRadius: '12px',
-              border: '1px solid var(--border-color)',
-              transition: 'transform 0.2s ease'
-            }}>
-              <h4 style={{ color: 'var(--accent-color)', marginBottom: '10px', fontSize: '1.1rem' }}>{item.title}</h4>
-              <p style={{ fontSize: '0.95rem', marginBottom: '12px', color: 'var(--text-primary)', fontWeight: '500' }}>{item.desc}</p>
-              <ul style={{ paddingLeft: '1.2rem', fontSize: '0.9rem', color: 'var(--text-secondary)', listStyle: 'square' }}>
-                {item.details.map((d, i) => <li key={i} style={{ marginBottom: '6px' }}>{d}</li>)}
+            <div key={idx}>
+              <h5 style={{ color: 'var(--accent-color)', marginBottom: '8px', fontSize: '1rem' }}>{item.title}</h5>
+              <p style={{ fontSize: '0.9rem', marginBottom: '10px', color: 'var(--text-primary)', fontWeight: '500' }}>{item.desc}</p>
+              <ul style={{ fontSize: '0.85rem', color: 'var(--text-secondary)' }}>
+                {item.details.map((d, i) => <li key={i}>{d}</li>)}
               </ul>
             </div>
           ))}
